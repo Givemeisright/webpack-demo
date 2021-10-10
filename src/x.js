@@ -1,2 +1,2 @@
 import './x.css'
-export default 'xxx';
+export default '你好';

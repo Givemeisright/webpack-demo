@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && npx webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && npx webpack --config webpack.config.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -22,8 +23,8 @@
     "style-loader": "^1.0.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "webpack": "4",
-    "webpack-cli": "3",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   }
 }
