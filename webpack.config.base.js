@@ -3,10 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-  },
+ 
   entry: "./src/index.js",
   output: {
     filename: "index.[contenthash].js"
@@ -21,7 +18,19 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.sass$/i,
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.styl$/,
+        loader: ["style-loader", "css-loader", "stylus-loader"]
+      },
+      {
+        test: /\.less$/,
+        loader: ["style-loader", "css-loader", "less-loader"]
+      },
+      {
+        test: /\.scss$/i,
         use: [
           'style-loader',
           'css-loader',
